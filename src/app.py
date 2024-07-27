@@ -17,5 +17,4 @@ mongo.init_app(app)
 app.register_blueprint(categories, url_prefix='/api/categories')
 
 if __name__ == '__main__':
-    CORS(app)
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

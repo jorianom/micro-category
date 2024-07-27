@@ -1,8 +1,7 @@
-FROM python
+FROM python:3.8-slim
 WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 COPY . .
-COPY requirements.txt .
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
 EXPOSE 5000
-CMD ["python", "src/app.py"]
+CMD ["python3", "src/app.py"]
